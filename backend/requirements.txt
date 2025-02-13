@@ -1,0 +1,13 @@
+bcrypt
+flask
+pandas
+cors
+flask-cors
+uuid
+pymongo
+python-dotenv
+datetime
+pytz
+bson
+openpyxl
+flask-jwt-extended

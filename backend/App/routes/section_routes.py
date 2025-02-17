@@ -20,7 +20,7 @@ def update_osasto():
         if not document_id:
             return jsonify({"error": "Missing document ID"}), 400
 
-        collection = get_collection("Kokkola")
+        collection = get_collection()
 
         # Convert document_id to ObjectId
         try:
@@ -65,7 +65,7 @@ def add_row():
         if not data or "id" not in data:
             return jsonify({"error": "No data provided or missing document ID"}), 400
 
-        collection = get_collection("Kokkola")
+        collection = get_collection()
 
         # Convert id to ObjectId
         try:
@@ -107,7 +107,7 @@ def delete_row():
         if not document_id:
             return jsonify({"error": "Missing document ID"}), 400
 
-        collection = get_collection("Kokkola")
+        collection = get_collection()
 
         # Convert id to ObjectId
         try:
@@ -134,7 +134,7 @@ def empty_row():
         if not document_id:
             return jsonify({"error": "Documnent ID is required"}), 400
 
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         try:
             object_id = ObjectId(document_id)
         except Exception:

@@ -9,7 +9,7 @@ workdata_bp = Blueprint("workdata", __name__)
 @workdata_bp.route("/fetch_user_works", methods=["POST"])
 def fetch_user_tasks():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
         worker_name = data.get("workerName")
 
@@ -75,7 +75,7 @@ def fetch_user_tasks():
 @workdata_bp.route("/fetch_history", methods=["POST"])
 def fetch_history():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
         document_id = data.get("id")
         section = data.get("section")
@@ -106,7 +106,7 @@ def fetch_history():
 @workdata_bp.route("/modify_task", methods=["POST"])
 def modify_task():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
 
         document_id = data.get("id")
@@ -155,7 +155,7 @@ def modify_task():
 @workdata_bp.route("/update_total_made_section", methods=["POST"])
 def update_total_made_section():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
 
         # Extract fields from request payload
@@ -242,7 +242,7 @@ def convert_to_hours_minutes(total_minutes):
 def get_total_work_hours_by_section():
     data = request.get_json()
     section_filter = data.get("section")
-    collection = get_collection("")
+    collection = get_collection()
     try:
         # Fetch all documents from the collection
         documents = collection.find(

@@ -3,7 +3,7 @@ from datetime import datetime
 import pytz
 from bson import ObjectId
 from App.extensions import db
-from App.extensions.db import get_collection  # Import the collection handler
+from App.extensions.db import get_collection, get_collection_koodit
 import os
 import pandas as pd
 import math
@@ -42,7 +42,7 @@ def get_data():
 @task_bp.route("/start_task", methods=["POST"])
 def start_task():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
 
         document_id = data.get("id")
@@ -90,7 +90,7 @@ def start_task():
 @task_bp.route("/endTask", methods=["POST"])
 def end_task():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
 
         document_id = data.get("id")
@@ -233,7 +233,7 @@ def import_excel():
         df = pd.read_excel(file_path)
         if df.empty:
             return jsonify({"error": "Uploaded Excel file is empty"}), 400
-        koodit_collection = get_collection("Koodit")
+        koodit_collection = get_collection_koodit()
         koodit_data = list(koodit_collection.find({}, {"_id": 0}))
         koodit_lookup = {
             item["Item number"]
@@ -284,7 +284,7 @@ def import_excel():
 
             enriched_data.append(document)
 
-        suomi_collection = get_collection("Kokkola")
+        suomi_collection = get_collection()
         if enriched_data:
             suomi_collection.insert_many(enriched_data)
             return (
@@ -306,7 +306,7 @@ def import_excel():
 @task_bp.route("/updatePress", methods=["POST"])
 def update_press():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         data = request.get_json()
 
         document_id = data.get("id")
@@ -335,7 +335,7 @@ def update_press():
 @task_bp.route("/getOsasto100", methods=["GET"])
 def get_osasto100():
     try:
-        collection = get_collection("Kokkola")  # Access the "Suomi" collection
+        collection = get_collection()  # Access the "Suomi" collection
 
         # Query MongoDB for documents where Osasto == 100
         result = list(collection.find({"Osasto": 100}))
@@ -353,7 +353,7 @@ def get_osasto100():
 @task_bp.route("/getOsasto200", methods=["GET"])
 def get_osasto200():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         result = list(collection.find({"Osasto": 200}))
 
         for doc in result:
@@ -368,7 +368,7 @@ def get_osasto200():
 @task_bp.route("/getOsasto300", methods=["GET"])
 def get_osasto300():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         result = list(collection.find({"Osasto": 300}))
 
         for doc in result:
@@ -383,7 +383,7 @@ def get_osasto300():
 @task_bp.route("/getOsasto400", methods=["GET"])
 def get_osasto400():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         result = list(collection.find({"Osasto": 400}))
 
         for doc in result:
@@ -397,7 +397,7 @@ def get_osasto400():
 @task_bp.route("/getOsasto500", methods=["GET"])
 def get_osasto500():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         result = list(collection.find({"Osasto": 500}))
 
         for doc in result:
@@ -411,7 +411,7 @@ def get_osasto500():
 @task_bp.route("getOsasto600", methods=["GET"])
 def get_osasto600():
     try:
-        collection = get_collection("Kokkola")
+        collection = get_collection()
         result = list(collection.find({"Osasto": 600}))
 
         for doc in result:

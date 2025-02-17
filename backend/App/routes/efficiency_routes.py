@@ -76,9 +76,9 @@ def create_efficiency_summary():
             if next_week > 52:
                 next_week = 1
                 current_year += 1
-            summary_name = f"KokkolaEfficiency_Week{next_week}"
+            summary_name = f"PärnuEfficiency_Week{next_week}"
         else:
-            summary_name = f"KokkolaEfficiency_Week{current_week}"
+            summary_name = f"PärnuEfficiency_Week{current_week}"
 
         # Filter documents where Osasto is 300 or 400
         items = list(collection.find({"Osasto": {"$in": [300, 400]}}))
@@ -87,7 +87,7 @@ def create_efficiency_summary():
 
         # Prepare summary document
         current_week = datetime.datetime.now(FINLAND_TZ).isocalendar()[1]
-        summary_name = f"KokkolaEfficiency_Week{current_week}"
+        summary_name = f"PärnuEfficiency_Week{current_week}"
 
         total_kpl_std_ajalla = 0
         total_kpl_target_ajalla = 0
@@ -166,7 +166,7 @@ def create_efficiency_summary():
 def get_efficiency_summary():
     try:
         current_week = datetime.datetime.now(FINLAND_TZ).isocalendar()[1]
-        summary_name = f"KokkolaEfficiency_Week{current_week}"
+        summary_name = f"PärnuEfficiency_Week{current_week}"
 
         # Fetch existing summary
         existing_summary = efficiency_collection.find_one(
@@ -334,8 +334,8 @@ def save_efficiency_summary():
     try:
         current_week = datetime.datetime.now(FINLAND_TZ).isocalendar()[1]
         current_year = datetime.datetime.now(FINLAND_TZ).year
-        summary_name = f"KokkolaEfficiency_Week{current_week}"
-        saved_summary_name = f"KokkolaEfficiency_{current_week}/{current_year}_saved"
+        summary_name = f"PärnuEfficiency_Week{current_week}"
+        saved_summary_name = f"PärnuEfficiency_{current_week}/{current_year}_saved"
 
         existing_summary = efficiency_collection.find_one(
             {"summary_name": summary_name}
@@ -384,7 +384,7 @@ def efficiency_history():
             for week in weeks:
                 # Build the query dynamically for each week and year
                 query = {
-                    "summary_name": f"KokkolaEfficiency_{week}/{year}_saved",
+                    "summary_name": f"PärnuEfficiency_{week}/{year}_saved",
                 }
                 print(f"Query filter for week {week}, year {year}: {query}")
 

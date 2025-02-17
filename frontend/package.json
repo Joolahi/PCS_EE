@@ -1,0 +1,43 @@
+{
+  "name": "test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/material": "^5.15.21",
+    "@mui/x-date-pickers": "^7.21.0",
+    "@tauri-apps/api": "^1.6.0",
+    "axios": "^1.7.7",
+    "chart.js": "^3.9.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "data-fns": "^1.1.0",
+    "dom": "^0.0.3",
+    "i18next": "^23.11.5",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
+    "react-circular-slider": "^1.0.12",
+    "react-clock": "^5.1.0",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^14.1.2",
+    "react-router": "^6.26.0",
+    "react-router-dom": "^6.24.0",
+    "tauri": "^0.15.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.3.1"
+  }
+}

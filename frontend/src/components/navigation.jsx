@@ -1,23 +1,21 @@
-import React, { useContext } from 'react';
-import { Button, Box, Typography } from '@mui/material';
-import { NavLink } from 'react-router-dom';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { AuthContext } from '../contexts/AuthContext';
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from './languageSwitcher';
-import ContentCutIcon from '@mui/icons-material/ContentCut';
-import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import HomeIcon from '@mui/icons-material/Home';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-import SanitizerIcon from '@mui/icons-material/Sanitizer';
+import CompressIcon from '@mui/icons-material/Compress';
+import ContentCutIcon from '@mui/icons-material/ContentCut';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ExtensionIcon from '@mui/icons-material/Extension';
-import SummarizeIcon from '@mui/icons-material/Summarize';
+import FormatColorFillIcon from '@mui/icons-material/FormatColorFill';
+import HomeIcon from '@mui/icons-material/Home';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import SanitizerIcon from '@mui/icons-material/Sanitizer';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import SwitchAccessShortcutIcon from '@mui/icons-material/SwitchAccessShortcut';
-import CompressIcon from '@mui/icons-material/Compress';
-import InfoIcon from '@mui/icons-material/Info';
+import { Box, Button, Typography } from '@mui/material';
+import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
+import LanguageSwitcher from './languageSwitcher';
 
 const Navigation = () => {
     const { user, logout } = useContext(AuthContext);
@@ -70,7 +68,7 @@ const Navigation = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', fontWeight: 'bold' }}>
-                        {t('remmit')}
+                        {t('Rihmalõikus')}
                         <SwitchAccessShortcutIcon />
                     </Box>
                 </Button>
@@ -86,7 +84,7 @@ const Navigation = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', fontWeight: 'bold' }}>
-                        {t('print')}
+                        {t('Rullimine')}
                         <FormatColorFillIcon />
                     </Box>
                 </Button>
@@ -118,7 +116,7 @@ const Navigation = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', fontWeight: 'bold' }}>
-                        {t('hygiene_side')}
+                        {t('Oõmblemine')}
                         <SanitizerIcon />
                     </Box>
                 </Button>
@@ -134,7 +132,7 @@ const Navigation = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', fontWeight: 'bold' }}>
-                        {t('special_side')}
+                        {t('Paber')}
                         
                     </Box>
                     <DeleteOutlineIcon />
@@ -167,7 +165,7 @@ const Navigation = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', fontWeight: 'bold' }}>
-                        {t('packaging')}
+                        {t('Pakkimine')}
                         <LocalShippingIcon />
                     </Box>
                 </Button>
@@ -298,7 +296,7 @@ const Navigation = () => {
                                 {t('work_hours')}
                             </Box>
                     </Button>
-
+                    {/*
                     <Button 
                         component={NavLink}
                         to="planning"
@@ -314,7 +312,7 @@ const Navigation = () => {
                             {t('Planning')}
                         </Box>
                     </Button>
-
+                    */} 
                 </Box>
                 )}
             </Box>

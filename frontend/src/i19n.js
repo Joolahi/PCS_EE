@@ -22,7 +22,7 @@ const resources = {
   .use(initReactI18next) // Passes i18n down to react-i18next
   .init({
     resources,
-    lng: 'en', // Default language
+    lng: 'et', // Default language
     fallbackLng: 'en', // Fallback language
     interpolation: {
       escapeValue: false 

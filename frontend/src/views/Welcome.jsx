@@ -71,6 +71,8 @@ const Welcome = () => {
                     <Typography variant="h2" component="h1" gutterBottom sx={{ color: '#071952', flexGrow: 1 }}>
                         {t('production control')}
                     </Typography>
+
+                    {/* Mood Buttons 
                     <Box display="flex" flexDirection="column" alignItems="flex-end">
                         <Typography mb={1} variant="h6">{t('mood')}</Typography>
                         <Box display="flex" alignItems="center" gap={2}>
@@ -85,9 +87,10 @@ const Welcome = () => {
                             </Button>
                         </Box>
                     </Box>
+                    */}
                 </Box>
 
-                {/* Mood Meter */}
+                {/* Mood Meter 
                 <Box mt={2}>
                     <Box sx={{ display: 'flex', width: '100%', height: '20px', borderRadius: '10px', overflow: 'hidden', backgroundColor: '#e0e0e0' }}>
                         <Box sx={{ width: `${badPercentage}%`, backgroundColor: 'rgba(188, 93, 93, 0.8)' }} />
@@ -96,6 +99,7 @@ const Welcome = () => {
                     </Box>
                     <Typography variant="body2" mt={1}>Total Votes: {totalVotes}</Typography>
                 </Box>
+                */}
 
                 <Navigation />
 
